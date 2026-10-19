@@ -1,0 +1,130 @@
+.movies-archive{padding-block:clamp(28px,5vw,64px);min-height:60vh}.movies-archive-heading{padding:clamp(24px,5vw,56px);border:1px solid rgba(94,199,190,.2);border-radius:24px;background:radial-gradient(ellipse at 85% 0,rgba(22,133,127,.2),transparent 46%),linear-gradient(135deg,#101e29,#071018);text-align:center}.movies-eyebrow,.movie-eyebrow{color:#55d4c3;font-size:.78rem;font-weight:800;letter-spacing:.14em}.movies-archive-heading h1{margin:.4rem 0;font-size:clamp(2rem,4vw,3.6rem)}.movies-archive-heading p{margin:0;color:#a9bbc4}.movies-filters{display:flex;align-items:end;gap:12px;flex-wrap:wrap;margin:24px 0 12px;padding:16px;border:1px solid #203440;border-radius:16px;background:#0d1821}.movies-filters label{display:grid;gap:7px;min-width:160px;color:#a9bbc4;font-size:.85rem}.movies-filters input,.movies-filters select{min-height:42px;padding:8px 12px;border:1px solid #2b414d;border-radius:10px;background:#101d27;color:#eef6f8}.movies-filters button,.movies-filters>a{min-height:42px;padding:10px 18px;border:1px solid #187a72;border-radius:10px;background:#087d73;color:#fff;text-decoration:none}.movies-result-count{color:#a9bbc4}.movie-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:18px}.movie-card{min-width:0;overflow:hidden;border:1px solid #1d303b;border-radius:16px;background:#0d1821;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease}.movie-card:hover{transform:translateY(-4px);border-color:#268e86;box-shadow:0 14px 36px #0006}.movie-card-poster{position:relative;display:grid;aspect-ratio:2/3;place-items:center;overflow:hidden;background:linear-gradient(145deg,#142b36,#081018)}.movie-card-poster img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}.movie-card:hover .movie-card-poster img{transform:scale(1.04)}.movie-card-type{position:absolute;inset-block-start:10px;inset-inline-start:10px;padding:4px 9px;border:1px solid #ffffff2a;border-radius:99px;background:#08141ccc;color:#d9fff8;font-size:.72rem}.movie-card-play{position:absolute;display:grid;width:44px;height:44px;place-items:center;border:1px solid #ffffff80;border-radius:50%;background:#06131ab0;color:#fff;opacity:0;transform:scale(.9);transition:.2s}.movie-card:hover .movie-card-play,.movie-card:focus-within .movie-card-play{opacity:1;transform:scale(1)}.movie-card-placeholder{color:#55d4c3;font-size:2rem}.movie-card-copy{padding:12px}.movie-card-copy h2{margin:0;font-size:1rem;line-height:1.5}.movie-card-copy h2 a{color:#f1f6f7;text-decoration:none}.movie-card-en{margin:4px 0;color:#849aa5;font-size:.77rem}.movie-card-meta{display:flex;justify-content:space-between;gap:8px;color:#9db0b9;font-size:.75rem}.movies-empty{padding:70px 20px;text-align:center;color:#a9bbc4}.movies-empty>span{color:#55d4c3;font-size:2rem}.movies-pagination ul{display:flex;justify-content:center;gap:8px;list-style:none;padding:20px 0}.movies-pagination a,.movies-pagination span{display:grid;min-width:40px;min-height:40px;place-items:center;border:1px solid #203440;border-radius:10px;color:#e8f1f3;text-decoration:none}.movies-pagination .current{background:#087d73}.movie-single{padding-block:24px 60px}.movie-hero{position:relative;isolation:isolate;display:grid;grid-template-columns:minmax(180px,260px) minmax(0,1fr);align-items:end;gap:clamp(24px,5vw,64px);min-height:380px;padding:clamp(24px,5vw,56px);overflow:hidden;border:1px solid #253943;border-radius:24px;background:#0b151d}.movie-hero-backdrop{position:absolute;z-index:-2;inset:0;background-image:var(--movie-backdrop);background-position:center 38%;background-size:cover;filter:blur(2px);transform:scale(1.03)}.movie-hero:after{position:absolute;z-index:-1;inset:0;background:linear-gradient(90deg,#071018e8,#071018b8 55%,#071018d9),linear-gradient(0deg,#07101899,transparent 65%);content:""}.movie-hero-poster{overflow:hidden;border:1px solid #ffffff35;border-radius:18px;box-shadow:0 20px 48px #0008;aspect-ratio:2/3}.movie-hero-poster img{width:100%;height:100%;object-fit:cover}.movie-hero-poster>span{display:grid;height:100%;place-items:center;color:#55d4c3;font-size:3rem}.movie-hero-copy h1{margin:.3em 0;font-size:clamp(2rem,5vw,4.5rem);line-height:1.15}.movie-title-en,.movie-title-zh{margin:.2em 0;color:#a9bbc4}.movie-facts{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0}.movie-facts>span{display:grid;gap:4px;min-width:100px;padding:10px 14px;border:1px solid #ffffff22;border-radius:12px;background:#0b1921c9}.movie-facts small{color:#8fa5ae}.movie-facts b{color:#f2f7f8}.movie-trailer-button{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;background:#087d73;color:white;text-decoration:none}.movie-body{max-width:1040px;padding-top:30px}.movie-section{margin-top:22px;padding:clamp(18px,3vw,30px);border:1px solid #203440;border-radius:18px;background:#0d1821}.movie-section>header{display:flex;align-items:center;gap:12px;margin-bottom:16px}.movie-section>header>span{color:#55d4c3;font-size:.78rem;font-weight:800}.movie-section h2{margin:0;font-size:1.35rem}.movie-prose,.movie-watch-placeholder p{color:#c2d0d5;line-height:1.95}.movie-grid-related{grid-template-columns:repeat(4,minmax(0,1fr))}@media(max-width:1000px){.movie-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:640px){.movie-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.movie-hero{grid-template-columns:92px minmax(0,1fr);align-items:center;gap:16px;min-height:0;padding:18px}.movie-hero-poster{border-radius:12px}.movie-hero-copy h1{font-size:1.5rem}.movie-facts{gap:6px;margin:14px 0}.movie-facts>span{min-width:0;padding:7px 9px;font-size:.78rem}.movie-grid-related{grid-template-columns:repeat(2,minmax(0,1fr))}.movies-filters{align-items:stretch}.movies-filters label{flex:1;min-width:calc(50% - 8px)}.movies-filters button{flex:1}}
+.movie-source-links{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.movie-source-link{display:inline-flex;align-items:center;min-height:42px;padding:8px 14px;border:1px solid #ffffff28;border-radius:10px;background:#0b1921c9;color:#d6e5e9;text-decoration:none}.movie-source-link:hover{border-color:#55d4c3;color:#75e2d3}
+.movie-playback,.movie-downloads{max-width:1040px;margin-inline:auto}.movie-player{position:relative;aspect-ratio:16/9;overflow:hidden;border:1px solid #203440;border-radius:14px;background:#03080d}.movie-player iframe,.movie-player video{position:absolute;inset:0;width:100%;height:100%;border:0;object-fit:contain}.movie-watch-servers,.movie-download-list{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}.movie-watch-server{display:flex;align-items:center;gap:9px;min-height:44px;padding:9px 15px;border:1px solid #263b47;border-radius:10px;background:#101e28;color:#e8f2f4;cursor:pointer}.movie-watch-server small{color:#8da3ad}.movie-watch-server:hover,.movie-watch-server.is-active{border-color:#25a99a;background:#0c302e;color:#9af0e1}.movie-download-link{display:flex;align-items:center;gap:12px;min-height:54px;padding:10px 14px;border:1px solid #263b47;border-radius:10px;background:#101e28;color:#dbe7eb;text-decoration:none}.movie-download-link:hover{border-color:#25a99a;background:#0c2427}.movie-download-link span{color:#a9bbc4;font-size:.82rem}.movie-download-link b{color:#68dfcf}.movie-download-link strong{color:#f2f7f8}@media(max-width:640px){.movie-download-link{width:100%;flex-wrap:wrap;gap:7px 10px}.movie-download-link b{margin-inline-start:auto}.movie-watch-servers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}.movie-watch-server{justify-content:center}}
+
+/* Film details reuse the cinematic work-page composition, with a film-only flow. */
+body.single-movie .movie-single-page { padding-block: 0 48px; }
+body.single-movie .single-donghua-hero-container,
+body.single-movie .single-donghua-body { width: min(1320px, calc(100% - 40px)); max-width: 1320px; margin-inline: auto; }
+body.single-movie .single-donghua-hero-container { margin-top: 18px; padding: 0; }
+body.single-movie .single-donghua-hero { position: relative; min-height: 410px; height: auto; max-height: none; overflow: hidden; border: 1px solid rgba(130,180,195,.13); border-radius: 22px; background-color: #0b151d; background-image: radial-gradient(ellipse at 12% 28%,rgba(31,120,129,.32),transparent 42%),radial-gradient(ellipse at 85% 83%,rgba(143,91,41,.2),transparent 38%),linear-gradient(135deg,#132633,#09131b 64%); background-position: center 30%; background-size: cover; box-shadow: 0 24px 64px rgba(0,0,0,.28); }
+body.single-movie .single-hero-scrim { position: absolute; inset: 0; background: linear-gradient(90deg,rgba(6,14,22,.12),rgba(6,14,22,.58) 34%,rgba(6,14,22,.94) 70%),linear-gradient(0deg,rgba(6,14,22,.64),transparent 48%); }
+body.single-movie .single-hero-content-wrap { position: relative; display: grid; grid-template-columns: minmax(0,1fr) 210px; align-items: center; gap: clamp(28px,5vw,76px); min-height: 410px; padding: 42px clamp(28px,5vw,76px); }
+body.single-movie .single-hero-text-col { display: flex; min-width: 0; max-width: 820px; flex-direction: column; align-items: flex-start; gap: 12px; }
+body.single-movie .single-hero-badges-row { display: flex; align-items: center; gap: 8px; }
+body.single-movie .single-hero-title { max-width: 790px; margin: 0; font-size: clamp(34px,3.3vw,52px); line-height: 1.18; letter-spacing: -.025em; }
+body.single-movie .single-hero-subtitles { display: flex; flex-wrap: wrap; gap: 8px; color: rgba(232,241,246,.72); font-size: 14px; }
+body.single-movie .single-hero-subtitles .sub-en,body.single-movie .single-hero-subtitles .sub-zh { unicode-bidi: plaintext; }
+body.single-movie .work-facts-rail { width: 100%; margin: 3px 0 0; padding: 8px 0 12px; border-bottom: 1px solid rgba(153,182,194,.18); }
+body.single-movie .work-facts-rail dl { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 22px; margin: 0; }
+body.single-movie .work-facts-rail dl>div { display: flex; min-width: 0; align-items: baseline; gap: 8px; }
+body.single-movie .work-facts-rail dt { color: #9baab6; font-size: 11px; }
+body.single-movie .work-facts-rail dd { margin: 0; color: #edf3f6; font-size: 13px; font-weight: 700; }
+body.single-movie .work-facts-genres dd { display: flex; flex-wrap: wrap; gap: 6px; }
+body.single-movie .work-facts-genres a { color: #77cfc6; text-decoration: none; }
+body.single-movie .single-hero-synopsis { display: block; max-width: 690px; margin: 1px 0 0; color: rgba(232,239,244,.82); font-size: 14px; line-height: 1.8; }
+body.single-movie .single-hero-synopsis-disclosure summary { display: grid; gap: 5px; cursor: pointer; list-style: none; }
+body.single-movie .single-hero-synopsis-disclosure summary::-webkit-details-marker { display: none; }
+body.single-movie .work-synopsis-preview { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
+body.single-movie .work-synopsis-toggle { color: #63d4c9; font-size: 12px; font-weight: 750; }
+body.single-movie .single-hero-synopsis-disclosure[open] .work-synopsis-preview { display: none; }
+body.single-movie .work-synopsis-full { margin: 0; }
+body.single-movie .single-hero-poster-col { width: 210px; }
+body.single-movie .single-hero-poster-frame { width: 100%; aspect-ratio: 2/3; overflow: hidden; border-radius: 14px; box-shadow: 0 20px 50px rgba(0,0,0,.46); }
+body.single-movie .single-hero-poster-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+body.single-movie .single-hero-poster-placeholder { position: relative; display: grid; height: 100%; place-items: center; overflow: hidden; background: radial-gradient(ellipse at 50% 36%,rgba(53,162,154,.3),transparent 42%),linear-gradient(155deg,#243945 0%,#101d28 48%,#080f17 100%); color: #75dfd0; font-size: 3rem; }
+body.single-movie .single-hero-poster-placeholder::before,body.single-movie .single-hero-poster-placeholder::after { position: absolute; inset: 12% 10%; border: 1px solid rgba(130,220,207,.22); border-radius: 48% 48% 12px 12px; content: ""; }
+body.single-movie .single-hero-poster-placeholder::after { inset: 22% 20%; border-color: rgba(130,220,207,.12); transform: rotate(45deg); }
+body.single-movie .single-hero-actions-row { display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 9px; margin-top: 5px; }
+body.single-movie :is(.btn-single-hero-primary,.btn-single-hero-secondary) { display: inline-flex; box-sizing: border-box; min-height: 44px; align-items: center; gap: 8px; padding: 9px 15px; border: 1px solid rgba(190,214,225,.18); border-radius: 9px; background: rgba(10,24,35,.75); color: #e7eef2; font-weight: 700; text-decoration: none; }
+body.single-movie .btn-single-hero-primary { border-color: rgba(58,202,188,.55); background: linear-gradient(135deg,#168e88,#116a72); color: #fff; }
+body.single-movie .movie-eyebrow { color: #70ddd0; font-size: .8rem; font-weight: 800; }
+body.single-movie .single-donghua-body { margin-top: 18px; }
+body.single-movie .work-section-nav { display: flex; gap: 8px; overflow-x: auto; margin: 0 0 26px; padding: 0 0 10px; border-bottom: 1px solid rgba(153,182,194,.18); scrollbar-width: thin; }
+body.single-movie .work-section-nav a { display: inline-flex; min-height: 44px; flex: 0 0 auto; align-items: center; padding: 0 14px; border-radius: 8px; color: #b2c0ca; font-size: 13px; font-weight: 700; text-decoration: none; }
+body.single-movie .work-section-nav a:hover,body.single-movie .work-section-nav a:focus-visible { background: rgba(34,145,137,.12); color: #8ce4d9; }
+body.single-movie :is(.movie-section,.movie-related,.movie-comments) { margin: 0 0 36px; padding: clamp(18px,3vw,30px); border: 1px solid #203440; border-radius: 18px; background: #0d1821; }
+body.single-movie .movie-section>.portal-section-header,body.single-movie .movie-related>.portal-section-header { margin-bottom: 16px; }
+body.single-movie .movie-section .portal-section-title,body.single-movie .movie-related .portal-section-title { margin: 0; font-size: 1.35rem; }
+body.single-movie .movie-playback,body.single-movie .movie-downloads { max-width: none; }
+body.single-movie .movie-related { padding-inline: 0; border: 0; background: transparent; }
+body.single-movie .movie-grid-related { grid-template-columns: repeat(7,minmax(0,1fr)); }
+body.single-movie .okd-rating-widget { position: relative; z-index: 5; display: flex; width: fit-content; max-width: 100%; min-width: 0; align-items: center; flex-wrap: wrap; gap: 8px; padding: 5px 8px; border: 1px solid rgba(153,182,194,.2); border-radius: 999px; background: rgba(8,20,29,.78); }
+body.single-movie .okd-rating-site-summary,body.single-movie .okd-rating-summary { display: flex; min-height: 30px; align-items: center; gap: 6px; padding: 0 9px; }
+body.single-movie .okd-rating-site-summary { border-inline-end: 1px solid rgba(153,182,194,.22); }
+body.single-movie .okd-rating-summary-label { color: #b8c7ce; font-size: 11px; font-weight: 700; }
+body.single-movie .okd-rating-site-average,body.single-movie .okd-rating-average { color: #fff0c5; font-size: 15px; font-weight: 900; }
+body.single-movie .okd-rating-star,body.single-movie .okd-rating-empty,body.single-movie .okd-rating-count,body.single-movie .okd-rating-out-of { color: #b5c4ca; font-size: 11px; }
+body.single-movie .okd-rating-picker { position: relative; justify-self: start; }
+body.single-movie .okd-rating-trigger { display: inline-flex; min-height: 34px; align-items: center; gap: 7px; padding: 5px 10px; border: 1px solid rgba(153,182,194,.2); border-radius: 999px; background: #101f29; color: #eef6f8; cursor: pointer; }
+body.single-movie .okd-rating-trigger-stars,body.single-movie .okd-rating-stars-display { display: inline-flex; direction: ltr; gap: 1px; }
+body.single-movie .okd-rating-trigger-stars>span,body.single-movie .okd-rating-average-star { position: relative; display: inline-block; width: 14px; overflow: hidden; color: rgba(207,219,223,.25); font-size: 14px; line-height: 1; }
+body.single-movie .okd-rating-trigger-stars>span::before,body.single-movie .okd-rating-average-star::before { position: absolute; inset: 0 auto 0 0; width: var(--rating-fill,0%); overflow: hidden; color: #f3c66f; content: '★'; white-space: nowrap; }
+body.single-movie .okd-rating-panel { position: absolute; z-index: 20; top: calc(100% + 8px); inset-inline-start: 0; display: grid; width: min(320px,calc(100vw - 32px)); gap: 12px; padding: 14px; border: 1px solid #28404a; border-radius: 14px; background: #101f29; box-shadow: 0 18px 56px #0008; }
+body.single-movie .okd-rating-picker:not([open])>.okd-rating-panel { display: none; }
+body.single-movie .okd-rating-panel-heading { display: flex; justify-content: space-between; align-items: center; color: #eef6f8; }
+body.single-movie .okd-rating-close { width: 36px; height: 36px; border: 1px solid #28404a; border-radius: 8px; background: transparent; color: #c5d2d7; font-size: 22px; cursor: pointer; }
+body.single-movie .okd-rating-hint,body.single-movie .okd-rating-login-copy { margin: 0; color: #a8bbc5; font-size: 12px; }
+body.single-movie .okd-rating-scale { display: grid; grid-template-columns: repeat(10,minmax(0,1fr)); gap: 2px; direction: ltr; }
+body.single-movie .okd-rating-choice { min-width: 0; min-height: 40px; padding: 4px 0; border: 0; background: transparent; color: rgba(207,219,223,.32); font-size: 19px; cursor: pointer; }
+body.single-movie .okd-rating-choice:hover,body.single-movie .okd-rating-choice.is-selected { color: #f3c66f; }
+body.single-movie .okd-rating-login { color: #9de5da; }
+body.single-movie .okd-rating-status,body.single-movie .okd-user-rating { margin: 0; color: #9bd7c9; font-size: 12px; }
+body.single-movie .movie-player-preview { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; background: linear-gradient(0deg,rgba(3,9,15,.78),rgba(3,9,15,.5)),var(--movie-preview,none),radial-gradient(ellipse at center,#19303b,#050b11 70%); background-position: center; background-size: cover; color: #eef6f8; }
+body.single-movie .movie-player-empty { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; padding: 24px; background: linear-gradient(90deg,rgba(5,14,21,.76),rgba(5,14,21,.9)),var(--movie-preview,none),radial-gradient(ellipse at 50% 45%,rgba(24,111,111,.46),#07111a 72%); background-position: center; background-size: cover; color: #eef6f8; text-align: center; }
+body.single-movie .movie-player-empty>span { display: grid; width: 62px; height: 62px; place-items: center; border: 1px solid rgba(119,224,211,.62); border-radius: 50%; background: rgba(8,24,32,.82); color: #8ce4d9; font-size: 23px; box-shadow: 0 0 0 8px rgba(45,175,164,.1); }
+body.single-movie .movie-player-empty strong { font-size: clamp(17px,2vw,22px); }
+body.single-movie .movie-player-empty p,body.single-movie .movie-player-empty small { max-width: 580px; margin: 0; color: #bacbd1; line-height: 1.7; }
+body.single-movie .movie-player-empty small { color: #8fa6b0; font-size: 12px; }
+body.single-movie .movie-player-preview strong { font-size: 18px; }
+body.single-movie .movie-player-preview span { color: #b4c5cb; font-size: 13px; }
+body.single-movie .movie-start-play { display: grid; width: 68px; height: 68px; place-items: center; border: 1px solid rgba(119,224,211,.7); border-radius: 50%; background: rgba(8,24,32,.84); color: #8ce4d9; font-size: 27px; cursor: pointer; box-shadow: 0 0 0 8px rgba(45,175,164,.12); }
+body.single-movie .movie-start-play:hover { transform: scale(1.06); background: #126d6b; color: #fff; }
+body.single-movie .movie-watch-servers { justify-content: flex-start; }
+body.single-movie .movie-open-server { display: inline-flex; margin-top: 12px; color: #8ce4d9; font-size: 12px; text-decoration: none; }
+body.single-movie .movie-open-server:hover { text-decoration: underline; }
+@media(max-width:900px){body.single-movie .movie-grid-related{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:640px){
+ body.single-movie .single-donghua-hero-container,body.single-movie .single-donghua-body{width:calc(100% - 28px)}
+ body.single-movie .single-donghua-hero-container{margin-top:10px}
+ body.single-movie .single-donghua-hero{min-height:0;border-radius:16px;background-position:center 28%}
+ body.single-movie .single-hero-scrim{background:linear-gradient(90deg,rgba(6,14,22,.58),rgba(6,14,22,.91)),linear-gradient(0deg,rgba(6,14,22,.72),transparent 70%)}
+ body.single-movie .single-hero-content-wrap{grid-template-columns:minmax(0,1fr) 82px;gap:12px;min-height:0;padding:20px 14px}
+ body.single-movie .single-hero-text-col{grid-column:1;grid-row:1;gap:8px}
+ body.single-movie .single-hero-poster-col{grid-column:2;grid-row:1;width:82px;align-self:start}
+ body.single-movie .single-hero-poster-frame{border-radius:8px}
+ body.single-movie .okd-rating-widget{width:100%;justify-content:flex-start;border-radius:14px;padding:6px;gap:2px}
+ body.single-movie .okd-rating-site-summary,body.single-movie .okd-rating-summary{min-height:28px;padding-inline:6px}
+ body.single-movie .okd-rating-picker{margin-inline-start:auto}
+ body.single-movie .single-hero-title{font-size:clamp(22px,6vw,28px);line-height:1.28}
+ body.single-movie .single-hero-subtitles{display:grid;gap:2px;font-size:11px}
+ body.single-movie .single-hero-subtitles .sub-sep{display:none}
+ body.single-movie .work-facts-rail dl{gap:8px 12px}
+ body.single-movie .work-facts-rail dl>div{gap:5px}
+ body.single-movie .work-facts-rail dt{font-size:10px}
+ body.single-movie .work-facts-rail dd{font-size:11px}
+ body.single-movie .single-hero-synopsis{font-size:12px;line-height:1.65}
+ body.single-movie .single-hero-actions-row{grid-column:1/-1;justify-content:stretch;gap:7px;width:100%;margin-top:3px}
+ body.single-movie .single-hero-actions-row>*{flex:1 1 auto;justify-content:center;min-width:0;padding-inline:8px;font-size:11px}
+ body.single-movie .work-section-nav{margin-bottom:20px}
+ body.single-movie .work-section-nav a{min-height:42px;padding-inline:11px;font-size:12px}
+ body.single-movie :is(.movie-section,.movie-related,.movie-comments){margin-bottom:26px;padding:15px;border-radius:14px}
+ body.single-movie .movie-grid-related{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+}
+
+/* Match the compact provider cards used below episode players. */
+body.single-movie .movie-downloads { display: grid; gap: 10px; padding: 14px; border: 1px solid rgba(96,184,203,.16); border-radius: 10px; background: rgba(5,16,25,.42); }
+body.single-movie .movie-downloads .downloads-section-title { display: flex; align-items: center; gap: 9px; margin: 0; color: #e8f1f4; font-size: 15px; font-weight: 800; }
+body.single-movie .movie-downloads .downloads-heading-icon { display: grid; width: 30px; height: 30px; place-items: center; border: 1px solid rgba(85,197,181,.24); border-radius: 8px; background: rgba(69,190,171,.12); color: #78d7c9; }
+body.single-movie .watch-download-items { display: grid; grid-template-columns: repeat(auto-fit,minmax(min(100%,260px),1fr)); gap: 8px; min-width: 0; }
+body.single-movie .watch-download-item { display: flex; min-width: 0; min-height: 56px; align-items: center; gap: 10px; padding: 8px 11px; border: 1px solid rgba(85,197,181,.24); border-radius: 9px; background: rgba(18,49,54,.38); color: #e6f3f0; text-decoration: none; transition: border-color .18s ease,background-color .18s ease,transform .18s ease; }
+body.single-movie .watch-download-item:hover,body.single-movie .watch-download-item:focus-visible { transform: translateY(-1px); border-color: rgba(85,197,181,.56); background: rgba(18,69,68,.48); color: #fff; }
+body.single-movie .watch-download-item .download-item-icon { display: grid; width: 34px; height: 34px; flex: 0 0 34px; place-items: center; border-radius: 9px; background: rgba(69,190,171,.12); color: #78d7c9; }
+body.single-movie .watch-download-item .download-provider-icon svg { display: block; width: 22px; height: 22px; }
+body.single-movie .watch-download-item .provider-gofile { background: rgba(53,166,111,.15); color: #71d59b; }
+body.single-movie .watch-download-item .provider-mega { background: rgba(231,64,72,.14); color: #ff747b; font-weight: 900; }
+body.single-movie .watch-download-item .btn-hub-download-copy { display: grid; min-width: 0; flex: 1 1 auto; gap: 3px; }
+body.single-movie .watch-download-item .btn-hub-download-copy strong { overflow: hidden; color: inherit; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+body.single-movie .watch-download-item .btn-hub-download-copy small { color: #9bb1b9; font-size: 10px; line-height: 1.5; }
+body.single-movie .movie-download-arrow { flex: 0 0 auto; color: #68dfcf; font-size: 11px; font-weight: 800; }
+body.single-movie .watch-download-empty { margin: 0; padding: 14px; border: 1px dashed rgba(96,184,203,.22); border-radius: 9px; color: #91a8b2; text-align: center; }

@@ -1,0 +1,314 @@
+:root {
+    color-scheme: dark;
+    --font-arabic: 'Tajawal', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Tajawal', 'Oswald', sans-serif;
+    --font-code: 'Poppins', monospace, sans-serif;
+
+    /* ── Exact Spacing Scale (4, 8, 12, 16, 20, 24, 32, 40, 48) ── */
+    --space-4:  4px;
+    --space-8:  8px;
+    --space-12: 12px;
+    --space-16: 16px;
+    --space-20: 20px;
+    --space-24: 24px;
+    --space-32: 32px;
+    --space-40: 40px;
+    --space-48: 48px;
+
+    /* Semantic Spacing Aliases */
+    --space-2xs: var(--space-4);
+    --space-xs:  var(--space-8);
+    --space-sm:  var(--space-12);
+    --space-md:  var(--space-16);
+    --space-lg:  var(--space-24);
+    --space-xl:  var(--space-32);
+    --space-2xl: var(--space-48);
+    --space-3xl: 64px;
+
+    /* ── Border Radius Hierarchy (Small: 8px, Default: 12px, Large: 16px, Hero: 18-20px) ── */
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-default: 12px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-hero: 20px;
+    --radius-xl: 20px;
+    --radius-pill: 9999px;
+
+    /* ── Typography Scale Hierarchy (RTL Arabic First) ── */
+    --fs-hero: clamp(32px, 3.2vw, 40px);
+    --fs-page-title: clamp(28px, 2.6vw, 32px);
+    --fs-section: clamp(20px, 2vw, 24px);
+    --fs-card-title: 16px;
+    --fs-body: 14.5px;
+    --fs-meta: 12.5px;
+    --fs-btn: 13.5px;
+
+    /* ── Global Width System (Canonical 1560px) ── */
+    --site-container-max: 1560px;
+    --site-wide-max: 1560px;
+    --site-reading-max: 860px;
+    --site-gutter: 24px;
+
+    /* ── Transitions & Elevation ── */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 320ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    --hero-overlay-start: rgba(8, 9, 11, 0.95);
+    --hero-overlay-mid: rgba(8, 9, 11, 0.72);
+    --hero-overlay-end: rgba(8, 9, 11, 0.35);
+    --episode-overlay-start: rgba(8, 9, 11, 0.66);
+    --episode-overlay-end: rgba(8, 9, 11, 0.95);
+    --swiper-theme-color: var(--brand-primary);
+}
+
+/* Responsive Container Gutters */
+@media (max-width: 1024px) {
+    :root {
+        --site-gutter: 20px;
+    }
+}
+@media (max-width: 768px) {
+    :root {
+        --site-gutter: 16px;
+    }
+}
+@media (max-width: 390px) {
+    :root {
+        --site-gutter: 14px;
+    }
+}
+
+/* Four dark-only palettes. Every theme shares the same semantic component system. */
+:root,
+html[data-theme="night-blue"],
+html[data-theme="jade"],
+html[data-theme="moon"],
+html[data-theme="charcoal"] {
+    color-scheme: dark;
+    --site-bg: #07101a;
+    --site-bg-secondary: #0a141d;
+    --site-surface: #0d1924;
+    --site-surface-2: #122231;
+    --site-accent: #0f766e;
+    --site-accent-hover: #115e59;
+    --site-accent-soft: rgba(15, 118, 110, .18);
+    --site-on-accent: #ffffff;
+    --site-accent-text: #83ded5;
+    --site-accent-rgb: 15, 118, 110;
+    --site-border: #22333e;
+    --site-border-soft: rgba(34, 51, 62, .72);
+    --site-text: #eef2f4;
+    --site-text-secondary: #abb7bf;
+    --site-muted: #788791;
+    --site-atmosphere: url("../images/backgrounds/night-blue.webp");
+    --site-atmosphere-opacity: .09;
+    --site-background-gradient: linear-gradient(180deg, #0d1924 0%, #09131c 48%, #050b10 100%);
+
+    --bg-page: var(--site-bg);
+    --bg-secondary: var(--site-bg-secondary);
+    --bg-boxed: var(--site-surface);
+    --bg-surface: var(--site-surface);
+    --bg-surface-alt: var(--site-surface-2);
+    --bg-elevated: var(--site-surface-2);
+    --bg-card: var(--site-surface);
+    --bg-card-alt: var(--site-surface);
+    --bg-card-hover: var(--site-surface-2);
+    --brand-primary: var(--site-accent);
+    --brand-primary-hover: var(--site-accent-hover);
+    --brand-primary-active: var(--site-accent);
+    --brand-primary-soft: var(--site-accent-soft);
+    --brand-gold: #c4a15d;
+    --brand-gold-light: #d7b878;
+    --brand-gold-dark: #a98443;
+    --brand-gold-soft: rgba(196, 161, 93, .14);
+    --text-primary: var(--site-text);
+    --text-secondary: var(--site-text-secondary);
+    --text-muted: var(--site-muted);
+    --text-subtle: var(--site-muted);
+    --text-inverse: #071018;
+    --border-color: var(--site-border);
+    --border-subtle: var(--site-border-soft);
+    --border-light: var(--site-border);
+    --border-focus: var(--site-accent);
+    --color-danger: #ef4444;
+    --color-danger-hover: #f87171;
+    --color-danger-soft: rgba(239, 68, 68, .14);
+    --color-success: #10b981;
+    --color-warning: #d6a84b;
+    --color-info: #0284c7;
+    --header-bg: var(--site-bg);
+    --topbar-bg: var(--site-surface);
+    --footer-bg: var(--site-bg);
+    --input-bg: var(--site-surface);
+    --input-text: #eef2f4;
+    --input-placeholder: #788791;
+    --player-bg: #000;
+    --player-panel-bg: var(--site-surface);
+    --player-sidebar-bg: var(--site-surface);
+    --shadow-color: rgba(0, 0, 0, .6);
+    --shadow-card: 0 8px 24px rgba(0, 0, 0, .35);
+    --shadow-card-hover: 0 14px 36px rgba(0, 0, 0, .45);
+    --shadow-boxed: 0 16px 44px rgba(0, 0, 0, .48);
+    --shadow-rating: 0 6px 18px rgba(196, 161, 93, .18);
+    --page-gradient: var(--site-background-gradient);
+    --work-accent: var(--site-accent);
+    --work-accent-rgb: var(--site-accent-rgb);
+}
+
+html[data-theme="jade"] {
+    --site-bg: #071310; --site-bg-secondary: #0a1914; --site-surface: #0c1d18; --site-surface-2: #112821;
+    --site-accent: #14685f; --site-accent-hover: #10574f; --site-accent-soft: rgba(20, 104, 95, .18);
+    --site-accent-text: #8fe0d2;
+    --site-accent-rgb: 20, 104, 95; --site-atmosphere: url("../images/backgrounds/jade.webp");
+    --site-border: #203a32;
+    --site-border-soft: rgba(32, 58, 50, .72);
+    --site-atmosphere-opacity: .085; --site-background-gradient: linear-gradient(180deg, #0c1d18 0%, #081510 48%, #040b08 100%);
+}
+html[data-theme="moon"] {
+    --site-bg: #0b1020; --site-bg-secondary: #0e1427; --site-surface: #11182b; --site-surface-2: #172139;
+    --site-accent: #286c88; --site-accent-hover: #20596f; --site-accent-soft: rgba(40, 108, 136, .18);
+    --site-accent-text: #a2d9e8;
+    --site-accent-rgb: 40, 108, 136; --site-atmosphere: url("../images/backgrounds/moon.webp");
+    --site-border: #29324b;
+    --site-border-soft: rgba(41, 50, 75, .72);
+    --site-atmosphere-opacity: .08; --site-background-gradient: linear-gradient(180deg, #11182b 0%, #0b1020 48%, #070a13 100%);
+}
+html[data-theme="charcoal"] {
+    --site-bg: #0b0e11; --site-bg-secondary: #101417; --site-surface: #12171b; --site-surface-2: #181f24;
+    --site-accent: #49676e; --site-accent-hover: #3b555b; --site-accent-soft: rgba(73, 103, 110, .2);
+    --site-accent-text: #b8d8db;
+    --site-accent-rgb: 73, 103, 110; --site-atmosphere: url("../images/backgrounds/charcoal.webp");
+    --site-border: #2b343a;
+    --site-border-soft: rgba(43, 52, 58, .72);
+    --site-atmosphere-opacity: .065; --site-background-gradient: linear-gradient(180deg, #12171b 0%, #0b0e11 48%, #060809 100%);
+}
+
+/* Stable semantic aliases shared by theme, account and content components. */
+:root,
+html[data-theme] {
+    --color-text-primary: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-border: var(--border-color);
+    --color-page: var(--bg-page);
+    --color-surface: var(--bg-surface);
+    --color-surface-raised: var(--bg-elevated);
+    --color-interaction: var(--brand-primary);
+    --color-premium: var(--brand-gold);
+}
+
+/* ── Backward Compatibility Aliases & Universal Mappings ── */
+:root,
+html[data-theme] {
+    --bg-header: var(--header-bg);
+    --bg-topbar: var(--topbar-bg);
+    --bg-footer: var(--footer-bg);
+    --bg-input: var(--input-bg);
+    --bg-tag: var(--bg-surface-alt);
+    --dh-outer-bg: var(--bg-page);
+    --dh-boxed-width: min(100% - calc(var(--site-gutter) * 2), var(--site-container-max));
+    --dh-boxed-bg: var(--bg-boxed);
+    --dh-boxed-border: var(--border-color);
+    --dh-boxed-shadow: var(--shadow-boxed);
+    --dh-header-bg: var(--header-bg);
+    --dh-topbar-bg: var(--topbar-bg);
+    --dh-footer-bg: var(--footer-bg);
+    --dh-surface: var(--bg-surface);
+    --dh-surface-alt: var(--bg-surface-alt);
+    --dh-surface-card: var(--bg-card);
+    --dh-surface-hover: var(--bg-card-hover);
+    --dh-border: var(--border-color);
+    --dh-border-subtle: var(--border-subtle);
+    --dh-border-light: var(--border-light);
+    --dh-text: var(--text-primary);
+    --dh-text-secondary: var(--text-secondary);
+    --dh-muted: var(--text-muted);
+    --dh-accent: var(--brand-primary);
+    --dh-accent-hover: var(--brand-primary-hover);
+    --dh-accent-glow: var(--brand-primary-soft);
+    --dh-accent-light: var(--brand-primary-soft);
+    --accent-red: var(--brand-primary);
+    --accent-red-hover: var(--brand-primary-hover);
+    --accent-red-glow: var(--brand-primary-soft);
+    --accent-red-light: var(--brand-primary-soft);
+    --accent-gold: var(--brand-gold);
+    --accent-gold-dark: var(--brand-gold-dark);
+    --dh-rating-gold: var(--brand-gold);
+    --dh-rating-gold-dark: var(--brand-gold-dark);
+    --dh-status-ongoing: var(--color-success);
+    --dh-status-completed: var(--color-info);
+    --dh-anim-3d: var(--brand-gold);
+    --dh-anim-2d: var(--brand-primary);
+    --status-active: var(--brand-primary);
+    --status-disabled: var(--text-muted);
+    --status-current: var(--brand-primary);
+    --accent-blue: var(--color-info);
+    --accent-green: var(--color-success);
+    --accent-orange: var(--color-warning);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-fast: 0ms;
+        --transition: 0ms;
+        --transition-slow: 0ms;
+    }
+}
+
+/* V3 public-surface design tokens. Legacy aliases above remain intact for
+   the single-work, player, account and membership surfaces awaiting later phases. */
+:root,
+html[data-theme] {
+    --color-bg-0: #080b10;
+    --color-bg-1: var(--site-bg);
+    --color-bg-2: var(--site-bg-secondary);
+    --color-surface: var(--site-surface);
+    --color-surface-raised: var(--site-surface-2);
+    --color-surface-hover: var(--bg-card-hover);
+    --color-text: var(--text-primary);
+    --color-text-secondary: var(--text-secondary);
+    --color-text-muted: var(--text-muted);
+    --color-brand-crimson: var(--site-accent);
+    --color-brand-crimson-hover: var(--site-accent-hover);
+    --color-brand-gold: #c7a66b;
+    --color-brand-jade: var(--site-accent);
+    --color-border: var(--border-color);
+    --color-border-strong: color-mix(in srgb, var(--border-color) 72%, #d7e0e5);
+    --color-success: #10b981;
+    --color-warning: #d6a84b;
+    --color-danger: #ef4444;
+    --color-info: #0284c7;
+
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 20px;
+    --space-6: 24px;
+    --space-8: 32px;
+    --space-10: 40px;
+    --space-12: 48px;
+
+    --radius-xs: 4px;
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+
+    --shadow-sm: 0 4px 14px rgba(0, 0, 0, .16);
+    --shadow-md: 0 12px 28px rgba(0, 0, 0, .24);
+    --shadow-floating: 0 22px 48px rgba(0, 0, 0, .32);
+
+    --container-default: 1320px;
+    --container-wide: 1440px;
+    --container-reading: 920px;
+    --transition-fast: 140ms cubic-bezier(.2, .7, .2, 1);
+    --transition-medium: 190ms cubic-bezier(.2, .7, .2, 1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    :root,
+    html[data-theme] { --transition-fast: 0ms; --transition-medium: 0ms; }
+}

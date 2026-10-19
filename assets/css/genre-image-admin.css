@@ -1,0 +1,14 @@
+.donghua-genre-image-field { max-width: 420px; }
+.donghua-genre-image-preview {
+    display: grid;
+    min-height: 72px;
+    max-width: 180px;
+    margin: 8px 0;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid #c3c4c7;
+    background: #f6f7f7;
+}
+.donghua-genre-image-preview img { display: block; width: 100%; height: auto; }
+.donghua-genre-image-preview span { padding: 12px; color: #646970; }
+.donghua-genre-image-field p { margin-block: 8px; }

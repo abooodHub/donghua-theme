@@ -1,0 +1,788 @@
+/* ==========================================================================
+   Donghua Theme - Responsive Stylesheet v2.0.0
+   OKanime Portal Edition — Desktop 1100px Boxed → Tablet → Mobile
+   Breakpoints: 1024px | 768px | 480px | 360px
+   ========================================================================== */
+
+/* ── Tablets & Small Desktops (≤ 1024px) ──────────────────────────────────── */
+@media screen and (max-width: 1024px) {
+    .site-wrapper {
+        width: calc(100% - 30px);
+        margin: 12px auto 25px;
+    }
+
+    /* Collapse 2-column portal to 1 column */
+    .portal-main-layout {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 20px 16px;
+    }
+
+    /* Sidebar goes below main content in a 2-col grid */
+    .portal-sidebar {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    .widget-community-card {
+        grid-column: 1 / -1;
+    }
+
+    /* Hero and Donghua cards are canonically controlled in premium.css */
+    .hero-work-title {
+        font-size: 28px;
+    }
+
+    /* Donghua cards: 4 per row */
+    .donghua-grid,
+    .archive-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+    }
+
+    /* Footer: 2+2 columns */
+    .footer-grid-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+    }
+
+    .col-about {
+        grid-column: 1 / -1;
+    }
+}
+
+/* ── Tablet Portrait (≤ 860px) ────────────────────────────────────────────── */
+@media screen and (max-width: 860px) {
+    .donghua-grid,
+    .archive-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+}
+
+/* ── Mobile Devices & Tablets (≤ 768px) ───────────────────────────────────── */
+@media screen and (max-width: 768px) {
+    /* Site wrapper fills the screen cleanly */
+    .site-wrapper {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        box-shadow: none;
+    }
+
+    /* Top Bar adjustments */
+    .top-bar-header {
+        padding: 6px 12px;
+    }
+
+    .top-bar-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .top-bar-tagline {
+        display: none;
+    }
+
+    /* Main Header */
+    .header-container {
+        padding: 0 14px;
+        height: 56px;
+    }
+
+    .site-logo-text {
+        font-size: 24px;
+    }
+
+    .logo-accent {
+        font-size: 20px;
+        padding: 1px 6px;
+    }
+
+    /* Header Actions & Theme Switcher */
+    .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .theme-toggle-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    /* Mobile Navigation Drawer is canonically handled in premium.css */
+
+
+    /* Hero Slider on Mobile is canonically styled in premium.css */
+
+    .hero-slide {
+        padding: 0 20px;
+    }
+
+    .hero-work-title {
+        font-size: 23px;
+    }
+
+    .hero-work-synopsis {
+        display: none; /* Keep mobile slide punchy & focused */
+    }
+
+    .hero-action-buttons {
+        gap: 6px;
+    }
+
+    .btn-hero-primary {
+        padding: 8px 16px;
+        font-size: 12.5px;
+    }
+
+    .btn-hero-secondary {
+        padding: 8px 14px;
+        font-size: 12px;
+    }
+
+    .hero-autoplay-control-btn {
+        top: 14px;
+        left: 14px;
+    }
+
+    .hero-autoplay-control-btn .autoplay-icon {
+        font-size: 11px;
+    }
+
+    /* Sub-Slider Action Bar */
+    .sub-slider-bar {
+        padding: 10px 14px;
+    }
+
+    .sub-slider-inner {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .subbar-search {
+        max-width: 100%;
+    }
+
+    .subbar-quick-tags {
+        overflow-x: auto;
+        white-space: nowrap;
+        flex-wrap: nowrap;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 4px;
+    }
+
+    .subbar-social {
+        justify-content: center;
+    }
+
+    /* Episode Rows on Mobile */
+    .episode-row-item {
+        padding: 8px 10px;
+        gap: 10px;
+    }
+
+    .row-num-badge {
+        font-size: 11px;
+        padding: 2px 7px;
+    }
+
+    .row-work-title {
+        font-size: 13px;
+    }
+
+    .row-sub-info {
+        gap: 6px;
+        font-size: 10.5px;
+    }
+
+    .row-watch-btn {
+        font-size: 11px;
+        padding: 3px 8px;
+    }
+
+    /* Donghua Cards: 3 per row on 768px tablet */
+    .donghua-grid,
+    .archive-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+    }
+
+    /* News Grid: 1 column */
+    .news-list-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Sidebar: single column */
+    .portal-sidebar {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-grid-columns {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* ── Mobile Devices & Phablets (≤ 600px) ───────────────────────────────────── */
+@media screen and (max-width: 600px) {
+    .donghua-grid,
+    .archive-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+/* ── Standard Smartphone Screens (≤ 480px) ────────────────────────────────── */
+@media screen and (max-width: 480px) {
+    .portal-section-title {
+        font-size: 16.5px;
+    }
+
+    .section-view-all {
+        font-size: 12px;
+        height: 32px;
+        padding: 0 12px;
+    }
+
+    /* Compact theme toggle on small screens */
+    .theme-toggle-btn {
+        padding: 5px 8px;
+    }
+    .theme-toggle-text {
+        display: none;
+    }
+
+    /* Slider height and cards are canonically styled in premium.css */
+
+    .hero-work-title {
+        font-size: 19px;
+        line-height: 1.3;
+    }
+
+    .hero-badges-row {
+        gap: 4px;
+    }
+
+    .badge-featured,
+    .badge-anim,
+    .badge-status,
+    .badge-gold-score {
+        font-size: 9.5px;
+        padding: 2px 6px;
+    }
+
+    /* Swiper controls smaller on mobile */
+    .hero-swiper .swiper-button-prev,
+    .hero-swiper .swiper-button-next {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero-swiper .swiper-button-prev::after,
+    .hero-swiper .swiper-button-next::after {
+        font-size: 13px;
+    }
+
+    .hero-autoplay-control-btn {
+        top: 10px;
+        left: 10px;
+    }
+
+    .hero-autoplay-control-btn .autoplay-icon {
+        font-size: 10px;
+    }
+
+    /* Card adjustments */
+    .card-title {
+        font-size: 12px;
+    }
+
+    .card-poster-img {
+        border-top-left-radius: 34px;
+    }
+
+    .card-score-badge {
+        font-size: 10.5px;
+        padding: 2px 6px;
+        top: 6px;
+        left: 6px;
+    }
+
+    .card-anim-badge {
+        font-size: 9px;
+        padding: 1px 5px;
+        top: 6px;
+        right: 6px;
+    }
+
+    .card-status-badge {
+        font-size: 9px;
+        padding: 1px 5px;
+        bottom: 6px;
+        right: 6px;
+    }
+
+    .card-ep-counter-badge {
+        font-size: 9.5px;
+        padding: 1px 5px;
+        bottom: 6px;
+        left: 6px;
+    }
+
+    .card-content {
+        padding: 8px 9px;
+    }
+
+    /* Episode Row Item on small phones */
+    .row-work-title {
+        max-width: 170px;
+    }
+
+    .row-watch-btn {
+        padding: 3px 6px;
+        font-size: 10.5px;
+    }
+}
+
+/* ── Small Smartphone Screens (≤ 360px) ───────────────────────────────────── */
+@media screen and (max-width: 360px) {
+    .site-logo-text {
+        font-size: 21px;
+    }
+
+    .logo-accent {
+        font-size: 18px;
+        padding: 1px 5px;
+    }
+
+    .hero-slider-section {
+        height: 250px;
+    }
+
+    .hero-work-title {
+        font-size: 17px;
+    }
+
+    .donghua-grid,
+    .archive-grid {
+        gap: 8px;
+    }
+
+    .row-work-title {
+        max-width: 130px;
+    }
+}
+
+/* ── Single Episode & Player Page Responsive ──────────────────────────────── */
+@media screen and (max-width: 900px) {
+    .player-layout-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        grid-template-areas: none !important;
+    }
+
+    .video-player-container {
+        order: 1 !important;
+        width: 100% !important;
+    }
+
+    .episodes-scroll-sidebar {
+        order: 2 !important;
+        width: 100% !important;
+        border-left: none !important;
+        border-top: 1px solid var(--border-color) !important;
+        height: auto !important;
+    }
+
+    .sidebar-header {
+        cursor: pointer;
+        padding: 13px 16px;
+        user-select: none;
+    }
+
+    .mobile-accordion-icon {
+        display: inline-block !important;
+    }
+
+    .episode-title-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .episode-nav-controls {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .player-utilities-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .servers-tabs-wrap {
+        justify-content: flex-start;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .episode-heading {
+        font-size: 18px;
+    }
+
+    .ep-nav-btn {
+        font-size: 11px;
+        padding: 7px 6px;
+        gap: 4px;
+    }
+
+    .server-tab-btn {
+        padding: 5px 9px;
+        font-size: 11px;
+    }
+
+    .episodes-scroll-list {
+        max-height: 320px;
+    }
+
+    .scroll-ep-item {
+        padding: 10px 14px;
+        font-size: 12.5px;
+    }
+}
+
+/* ── Donghua Encyclopedia Responsive ─────────────────────────────────────── */
+@media screen and (max-width: 1024px) {
+    .enc-body-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .enc-specs-sidebar {
+        position: static;
+        top: auto;
+    }
+
+    .encyclopedia-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .encyclopedia-portal-header {
+        padding: 24px 16px;
+    }
+
+    .enc-portal-title {
+        font-size: 22px;
+    }
+
+    .enc-portal-desc {
+        font-size: 13.5px;
+    }
+
+    .enc-search-form {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+    }
+
+    .enc-search-icon {
+        padding: 0 10px;
+        font-size: 15px;
+    }
+
+    .enc-search-input {
+        padding: 10px 4px;
+        font-size: 13px;
+        min-width: 0;
+    }
+
+    .enc-search-btn {
+        padding: 0 18px;
+        font-size: 13px;
+        height: 44px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    .enc-alphabet-filter-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        padding-bottom: 8px;
+    }
+
+    .enc-alpha-list {
+        flex-wrap: nowrap;
+    }
+
+    .term-of-day-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+        padding: 18px 16px;
+    }
+
+    .cultivation-flow-track {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .cultivation-flow-arrow {
+        transform: rotate(-90deg);
+        margin: 6px auto;
+        display: inline-block;
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .cultivation-flow-node {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .enc-relations-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donghua-enc-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media screen and (max-width: 480px) {
+    .encyclopedia-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .donghua-enc-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .enc-hero-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .enc-entry-title {
+        font-size: 22px;
+    }
+
+    .substages-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .enc-multilingual-titles {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+
+/* ==========================================================================
+   Phase 2 Dedicated Donghua Encyclopedia Responsive Enhancements
+   ========================================================================== */
+
+@media screen and (max-width: 1024px) {
+    .dh-graph-branches-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dh-enc-hero-grid {
+        gap: 20px;
+    }
+
+    .dh-enc-title {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .dh-enc-hero-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .dh-enc-poster-wrap {
+        flex: 0 0 160px;
+        max-width: 160px;
+        margin: 0 auto;
+    }
+
+    .dh-enc-breadcrumbs {
+        justify-content: center;
+    }
+
+    .dh-enc-badge-row {
+        justify-content: center;
+    }
+
+    .dh-enc-stats-bar {
+        justify-content: center;
+    }
+
+    .dh-enc-actions-row {
+        justify-content: center;
+    }
+
+    .dh-graph-title-row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dh-graph-focal-switcher {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dh-select-input {
+        width: 100%;
+    }
+
+    .dh-graph-branches-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mobile Cultivation Pathway Timeline */
+    .dh-pathway-desktop-track {
+        display: none !important;
+    }
+
+    .dh-pathway-mobile-timeline {
+        display: block !important;
+        position: relative;
+        padding-right: 36px;
+        margin-top: 10px;
+    }
+
+    .dh-timeline-spine {
+        position: absolute;
+        right: 17px;
+        top: 10px;
+        bottom: 10px;
+        width: 2px;
+        background: linear-gradient(to bottom, var(--brand-primary), var(--brand-gold));
+    }
+
+    .dh-timeline-step-row {
+        position: relative;
+        margin-bottom: 16px;
+    }
+
+    .dh-timeline-marker {
+        position: absolute;
+        right: -36px;
+        top: 8px;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--brand-primary);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 800;
+        border: 2px solid var(--bg-surface);
+        box-shadow: 0 0 10px var(--brand-primary-soft);
+        z-index: 2;
+    }
+
+    .dh-timeline-step-content {
+        background: var(--bg-surface-alt);
+        border: 1px solid var(--border-subtle);
+        border-radius: var(--radius-sm);
+        padding: 12px 14px;
+        text-align: right;
+    }
+
+    .dh-timeline-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+
+    .dh-timeline-num-badge {
+        font-size: 10.5px;
+        font-weight: 700;
+        color: var(--accent-gold);
+    }
+
+    .dh-timeline-en {
+        font-size: 10.5px;
+        color: var(--text-muted);
+        font-family: var(--font-code);
+    }
+
+    .dh-timeline-title {
+        font-size: 14.5px;
+        font-weight: 700;
+        margin: 2px 0 6px;
+    }
+
+    .dh-timeline-title a {
+        color: var(--text-primary);
+        text-decoration: none;
+    }
+
+    .dh-enc-tabs-bar {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        scrollbar-width: thin;
+    }
+
+    .dh-tab-btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .dh-stat-item {
+        min-width: calc(50% - 6px);
+        flex: 1 1 calc(50% - 6px);
+    }
+
+    .dh-enc-title {
+        font-size: 22px;
+    }
+
+    .dh-enc-actions-row {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dh-btn-primary,
+    .dh-btn-secondary,
+    .dh-btn-ghost {
+        width: 100%;
+        justify-content: center;
+    }
+}
+

@@ -1,0 +1,273 @@
+/* OK.DONGHUA Public Theme V3 — Phase C account and search surfaces. */
+
+/* Account center */
+body.donghua-portal-body .dh-account-hub {
+    --dhc-surface: var(--color-surface, var(--dhm-surface, #101c26));
+    --dhc-raised: var(--color-surface-raised, var(--dhm-surface-raised, #14222d));
+    --dhc-border: var(--color-border, var(--dhm-border, rgba(148, 170, 185, .16)));
+    --dhc-text: var(--color-text, var(--dhm-text, #edf3f5));
+    --dhc-muted: var(--color-text-muted, var(--dhm-muted, #9baeb9));
+    --dhc-accent: var(--color-brand-jade, var(--dhm-accent, #36b6a0));
+    width: min(calc(100% - 40px), 1240px);
+    max-width: 100%;
+    margin-inline: auto;
+    color: var(--dhc-text);
+}
+
+.dh-account-hub,
+.dh-account-hub * { box-sizing: border-box; }
+.dh-account-hub :is(a, button, input, select, textarea, summary):focus-visible {
+    outline: 2px solid var(--dhc-accent);
+    outline-offset: 3px;
+}
+.dh-account-page-wrap { width: 100%; max-width: 100%; min-width: 0; margin-inline: auto; }
+.dh-account-layout { grid-template-columns: minmax(210px, 240px) minmax(0, 1fr); gap: clamp(16px, 2.2vw, 26px); min-width: 0; }
+.dh-account-layout > *,
+.dh-account-content,
+.dh-account-content > *,
+.dh-account-section { min-width: 0; }
+.dh-account-profile-hero {
+    grid-template-columns: 72px minmax(0, 1fr) auto;
+    gap: 14px 18px;
+    padding: 18px 20px;
+    border: 1px solid var(--dhc-border);
+    border-radius: 10px;
+    background: var(--dhc-surface);
+}
+.dh-account-identity-avatar img { display: block; width: 68px; height: 68px; object-fit: cover; border-radius: 50%; }
+.dh-account-profile-summary,
+.dh-account-name-row,
+.dh-account-summary-actions { min-width: 0; }
+.dh-account-profile-email { max-width: 100%; overflow-wrap: anywhere; }
+.dh-account-summary-metrics { border-color: var(--dhc-border); }
+.dh-account-nav {
+    top: 84px;
+    align-self: start;
+    min-width: 0;
+    padding: 8px;
+    border: 1px solid var(--dhc-border);
+    border-radius: 9px;
+    background: var(--dhc-surface);
+}
+.dh-account-nav a { min-height: 44px; border-radius: 6px; }
+.dh-account-nav a.is-current { border-inline-start-color: var(--dhc-accent); background: var(--dhc-raised); }
+.dh-account-unread-count { background: var(--dhc-accent); }
+.dh-account-content {
+    padding: clamp(14px, 2vw, 22px);
+    border: 1px solid var(--dhc-border);
+    border-radius: 10px;
+    background: var(--dhc-surface);
+    gap: 18px 24px;
+}
+.dh-account-view-heading { padding-bottom: 12px; }
+.dh-account-view-heading h2,
+.dh-account-section-heading h2 { letter-spacing: -.01em; }
+.dh-account-content > .dh-account-section { padding-bottom: 18px; }
+.dh-account-content > .dh-account-section:last-child { padding-bottom: 0; border-bottom: 0; }
+.dh-account-content .dh-account-section-heading { gap: 12px; }
+.dh-account-content .dh-account-section-heading > div,
+.dh-account-content .dh-account-section-heading > div > * { min-width: 0; }
+.dh-account-inline-link { min-height: 40px; }
+.dh-account-watch-rail { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.dh-account-watch-item {
+    grid-template-columns: minmax(116px, .9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid var(--dhc-border);
+    border-radius: 8px;
+    background: color-mix(in srgb, var(--dhc-raised) 72%, transparent);
+}
+.dh-account-watch-poster { min-width: 0; overflow: hidden; border-radius: 6px; background: var(--dhc-raised); }
+.dh-account-watch-poster img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.dh-account-watch-poster .dh-account-progress { inset-inline: 0; }
+.dh-account-watch-copy { min-width: 0; }
+.dh-account-watch-copy h3 { overflow-wrap: anywhere; }
+.dh-account-resume-action,
+.dh-account-secondary-action,
+.dh-library-pagination a { min-height: 44px; }
+.dh-account-hub .dh-account-resume-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 13px;
+    border: 1px solid var(--dhc-accent);
+    border-radius: 6px;
+    background: var(--dhc-accent);
+    color: #06221d;
+    font-weight: 750;
+    text-decoration: none;
+}
+.dh-account-hub .dh-account-resume-action:hover { background: color-mix(in srgb, var(--dhc-accent) 84%, white); color: #06221d; }
+.dh-account-library-section .dh-library-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.dh-account-library-section .dh-library-filters a {
+    min-height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 13px;
+    border: 1px solid var(--dhc-border);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--dhc-muted);
+    text-decoration: none;
+}
+.dh-account-library-section .dh-library-filters a.is-current { border-color: color-mix(in srgb, var(--dhc-accent) 52%, var(--dhc-border)); background: color-mix(in srgb, var(--dhc-accent) 12%, var(--dhc-surface)); color: var(--dhc-text); }
+.dh-account-library-section .dh-library-controls summary { min-height: 44px; }
+.dh-account-library-section .dh-library-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 158px), 1fr)); gap: 14px; }
+.dh-account-library-section .dh-library-item { min-width: 0; overflow: visible; border: 1px solid var(--dhc-border); border-radius: 8px; background: var(--dhc-raised); }
+.dh-account-library-section .dh-library-poster { display: block; overflow: hidden; border-radius: 7px 7px 0 0; }
+.dh-account-library-section .dh-library-item-copy { min-width: 0; padding: 10px; }
+.dh-account-library-section .dh-library-item-copy h3 { overflow-wrap: anywhere; }
+.dh-account-library-section .dh-library-controls { margin: 0 10px 10px; }
+.dh-account-history-section .dh-account-history-item {
+    grid-template-columns: 104px minmax(0, 1fr) auto;
+    gap: 12px;
+    min-width: 0;
+}
+.dh-account-history-section .dh-account-history-copy,
+.dh-account-history-section .dh-account-history-copy > * { min-width: 0; }
+.dh-account-history-section .dh-account-history-copy time { overflow-wrap: anywhere; }
+.dh-account-hub .dh-account-progress i { background: var(--color-brand-jade, #36b6a0); }
+.dh-account-history-section .dh-account-icon-action { min-width: 44px; min-height: 44px; }
+.dh-account-notification-list li { min-width: 0; }
+.dh-account-notification-list .dh-account-notification-copy { min-width: 0; overflow-wrap: anywhere; }
+.dh-account-notification-list li.is-unread { background: color-mix(in srgb, var(--dhc-accent) 5%, transparent); }
+.dh-account-session-card { min-width: 0; border-color: var(--dhc-border); border-radius: 8px; background: var(--dhc-raised); }
+.dh-account-session-current { color: var(--dhc-accent); }
+.dh-account-password-form,
+.dh-account-profile-form { min-width: 0; }
+.dh-account-hub :is(.dh-account-password-form, .dh-account-profile-form) :is(input, select, textarea) { max-width: 100%; min-height: 44px; }
+.dh-account-empty-state { border: 1px dashed var(--dhc-border); border-radius: 8px; background: color-mix(in srgb, var(--dhc-raised) 55%, transparent); }
+
+@media (max-width: 980px) {
+    .dh-account-layout { display: flex; flex-direction: column; align-items: stretch; gap: 12px; }
+    .dh-account-layout .dh-account-nav {
+        position: static;
+        align-self: stretch;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        gap: 5px;
+        padding: 5px 6px;
+        border: 1px solid var(--dhc-border);
+        border-radius: 8px;
+        overscroll-behavior-inline: contain;
+        scrollbar-width: thin;
+    }
+    .dh-account-layout .dh-account-nav a { flex: 0 0 auto; min-height: 44px; white-space: nowrap; border: 0; }
+    .dh-account-layout .dh-account-nav a.is-current { box-shadow: inset 0 -2px var(--dhc-accent); }
+    .dh-account-content { width: 100%; }
+}
+@media (max-width: 760px) {
+    body.donghua-portal-body .dh-account-hub { width: calc(100% - 28px); }
+    .dh-account-profile-hero { grid-template-columns: 58px minmax(0, 1fr); gap: 10px; padding: 14px; }
+    .dh-account-identity-avatar img { width: 54px; height: 54px; }
+    .dh-account-content { padding: 14px; }
+    .dh-account-watch-rail { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+    .dh-account-watch-item { grid-template-columns: minmax(112px, .82fr) minmax(0, 1.18fr); gap: 10px; padding: 8px; }
+    .dh-account-library-section .dh-library-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
+    .dh-account-history-section .dh-account-history-item { grid-template-columns: 72px minmax(0, 1fr) 44px; gap: 8px; }
+    .dh-account-history-section .dh-account-history-poster { width: 72px; height: 58px; }
+    .dh-account-history-section .dh-account-resume-action { grid-column: 2; justify-self: start; }
+    .dh-account-history-section .dh-account-icon-action { grid-column: 3; grid-row: 1 / span 2; }
+}
+@media (max-width: 390px) {
+    body.donghua-portal-body .dh-account-hub { width: calc(100% - 22px); }
+    .dh-account-content { padding: 11px; }
+    .dh-account-profile-hero { padding: 12px; }
+    .dh-account-library-section .dh-library-filters { gap: 5px; }
+    .dh-account-library-section .dh-library-filters a { min-height: 44px; padding-inline: 10px; }
+}
+
+/* Header search expands in place instead of covering the header/page. */
+#header-search-wrap { position: relative; flex: 0 0 44px; width: 44px; z-index: 1004; transition: width .22s ease, flex-basis .22s ease; }
+#header-search-toggle { display: inline-flex !important; align-items: center; justify-content: center; width: 44px; height: 44px; min-width: 44px; min-height: 44px; }
+#header-search-wrap:not(.is-expanded) #header-search-form { display: none; }
+#header-search-wrap .live-search-results { display: none; }
+#header-search-wrap:not(.is-expanded) .live-search-results { display: none !important; }
+#header-search-wrap.is-expanded { flex: 0 1 clamp(260px, 30vw, 360px); width: clamp(260px, 30vw, 360px); max-width: min(360px, calc(100vw - 220px)); }
+#header-search-wrap.is-expanded #header-search-toggle { display: none !important; }
+#header-search-wrap.is-expanded #header-search-form {
+    position: relative;
+    z-index: 1005;
+    inset: auto;
+    width: 100%;
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    box-sizing: border-box;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 2px 5px 2px 9px;
+    border: 1px solid var(--color-border, rgba(148, 170, 185, .24));
+    border-radius: 11px;
+    background: var(--color-surface, #101c26);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .2);
+    transform: none;
+}
+#header-search-wrap.is-expanded #header-search-input { flex: 1 1 auto; width: 100%; min-width: 0; height: 40px; background: transparent; }
+#header-search-wrap.is-expanded:focus-within #header-search-form { border-color: var(--color-brand-jade, #36b6a0); box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-brand-jade, #36b6a0) 22%, transparent); }
+#header-search-wrap.is-expanded #header-search-input:focus { outline: 0; box-shadow: none; }
+#header-search-wrap.is-expanded .header-search-close { display: inline-flex; align-items: center; justify-content: center; min-width: 40px; min-height: 40px; }
+#header-search-wrap .live-search-results {
+    position: absolute;
+    z-index: 1005;
+    inset-block-start: calc(100% + 8px);
+    inset-inline: 0 auto;
+    width: min(420px, calc(100vw - 32px));
+    max-height: min(58vh, 440px);
+    overflow-y: auto;
+    border: 1px solid var(--color-border, rgba(148, 170, 185, .24));
+    border-radius: 9px;
+    background: var(--color-surface, #101c26);
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .34);
+    transform: none;
+}
+#header-search-wrap .search-results-head { padding: 10px 14px; color: var(--color-text-muted, #9baeb9); font-size: .78rem; }
+#header-search-wrap .search-result-item { min-height: 66px; align-items: center; gap: 12px; padding: 8px 14px; text-decoration: none; }
+#header-search-wrap .search-thumb-wrap { flex: 0 0 42px; width: 42px; height: 54px; overflow: hidden; border-radius: 5px; background: var(--color-surface-raised, #14222d); }
+#header-search-wrap .search-thumb { width: 100%; height: 100%; object-fit: cover; }
+#header-search-wrap .search-meta-info { min-width: 0; display: grid; gap: 3px; }
+#header-search-wrap .search-meta-info strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-text, #edf3f5); }
+#header-search-wrap .search-secondary-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: var(--color-text-muted, #9baeb9); font-size: .72rem; }
+#header-search-wrap .search-meta-badges { display: flex; flex-wrap: wrap; gap: 4px 8px; color: var(--color-text-muted, #9baeb9); font-size: .72rem; }
+#header-search-wrap .search-meta-badges em { font-style: normal; }
+#header-search-wrap .search-open-arrow { margin-inline-start: auto; color: var(--color-brand-jade, #36b6a0); }
+#header-search-wrap .search-empty-state { padding: 16px; color: var(--color-text-muted, #9baeb9); line-height: 1.7; }
+#header-search-wrap :is(button, input, a):focus-visible { outline: 2px solid var(--color-brand-jade, #36b6a0); outline-offset: 3px; }
+@media (max-width: 1024px) {
+    #header-search-wrap.is-expanded { flex-basis: min(320px, calc(100vw - 220px)); width: min(320px, calc(100vw - 220px)); }
+}
+@media (max-width: 640px) {
+    #header-search-wrap.is-expanded { flex-basis: min(250px, calc(100vw - 190px)); width: min(250px, calc(100vw - 190px)); }
+    #header-search-wrap.is-expanded #header-search-form { height: 42px; padding-inline: 4px; }
+    #header-search-wrap.is-expanded #header-search-input { height: 38px; }
+    #header-search-wrap.is-expanded .header-search-close { min-width: 34px; min-height: 34px; }
+}
+
+/* Search results page: preserve the existing Works/Episodes grouping. */
+.search-results-page { width: min(calc(100% - 40px), 1240px); max-width: 100%; margin: 30px auto 64px; }
+.search-header { margin-bottom: 24px; padding-bottom: 16px; border-bottom: 1px solid var(--color-border, rgba(148, 170, 185, .18)); }
+.search-title { font-size: clamp(1.35rem, 2.4vw, 2rem); line-height: 1.45; overflow-wrap: anywhere; }
+.search-term-highlight { color: var(--color-brand-jade, #36b6a0); }
+.search-summary-text { color: var(--color-text-muted, #9baeb9); }
+.search-results-section { min-width: 0; margin-block: 22px 32px; }
+.search-section-header { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.search-results-page .search-donghua-grid { grid-template-columns: repeat(auto-fill, minmax(min(100%, 158px), 1fr)); gap: clamp(10px, 1.5vw, 18px); }
+.search-results-page .search-episodes-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 270px), 1fr)); gap: 14px; }
+.no-search-results { display: grid; justify-items: center; gap: 10px; max-width: 620px; margin: 34px auto; padding: clamp(20px, 5vw, 42px); border: 1px solid var(--color-border, rgba(148, 170, 185, .18)); border-radius: 10px; background: var(--color-surface, #101c26); text-align: center; }
+.no-search-results :is(h2, p) { margin: 0; }
+.no-search-results .btn-secondary { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; padding: 8px 14px; border-radius: 6px; }
+.search-pagination { display: flex; justify-content: center; min-width: 0; }
+@media (max-width: 760px) {
+    .search-results-page { width: calc(100% - 28px); margin-top: 20px; }
+    .search-results-page .search-donghua-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .search-results-page .search-episodes-grid { grid-template-columns: minmax(0, 1fr); }
+}

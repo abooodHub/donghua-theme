@@ -1,0 +1,10 @@
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+*.bak
+*.zip
+.env
+.env.*
+wp-config.php
+wp-config-local.php

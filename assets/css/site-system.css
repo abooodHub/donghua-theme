@@ -1,0 +1,224 @@
+/*
+ * OK.DONGHUA public layout system.
+ * Loaded last to standardize sizing and prevent overflow across the public theme.
+ * Component visuals and interaction logic remain owned by their existing files.
+ */
+:root {
+    --layout-content-max: 1440px;
+    --layout-wide-max: 1600px;
+    --layout-gutter: clamp(14px, 2.6vw, 36px);
+    --layout-section-space: clamp(26px, 4vw, 52px);
+    --layout-card-radius: 14px;
+    --layout-surface: #101a23;
+    --layout-surface-raised: #14212b;
+    --layout-border: rgba(157, 190, 205, .14);
+    --layout-text: #e8f0f4;
+    --layout-muted: #a7b7c2;
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { max-width: 100%; scroll-padding-top: 84px; }
+body { max-width: 100%; color: var(--layout-text); }
+img, video, iframe, embed, object { max-width: 100%; }
+img { height: auto; }
+button, input, select, textarea { max-width: 100%; font: inherit; }
+main, .main-content, .site-wrapper, .site-container, .site-container-wide,
+.site-container-reading, .portal-section, .donghua-card, .episode-card,
+.watch-inner-wrap, .archive-donghua-page, .search-results-page,
+.schedule-page-container, .enc-body-container, .dh-account-hub {
+    min-width: 0;
+}
+
+.site-container,
+.container {
+    max-width: var(--layout-content-max);
+    padding-inline: var(--layout-gutter);
+}
+
+.site-container-wide { max-width: var(--layout-wide-max); padding-inline: var(--layout-gutter); }
+.site-container-reading, .reading-container { max-width: min(100%, 900px); padding-inline: var(--layout-gutter); }
+
+:is(.donghua-grid, .glossary-grid, .search-donghua-grid, .news-list-grid) > *,
+:is(.portal-section, .archive-donghua-page, .search-results-page, .schedule-page-container, .enc-body-container) * {
+    min-width: 0;
+}
+
+:is(.portal-section, .archive-donghua-page, .search-results-page, .schedule-page-container, .enc-body-container) :is(h1, h2, h3, p, a, strong, span) {
+    overflow-wrap: anywhere;
+}
+
+:is(.donghua-card, .episode-card, .glossary-card, .news-card) {
+    border-color: var(--layout-border);
+    border-radius: var(--layout-card-radius);
+}
+
+/* A quiet, image-led atmosphere follows the selected work on both its detail
+   and episode pages; the content panels remain opaque enough for readability. */
+body:is(.single-donghua, .single-movie, .single-episode) { position: relative; isolation: isolate; }
+body:is(.single-donghua, .single-movie, .single-episode)::before {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background-color: #071019;
+    background-image:
+        linear-gradient(180deg, rgba(5, 12, 19, .52), rgba(5, 12, 19, .88) 58%, #071019),
+        radial-gradient(ellipse at 82% 8%, rgba(var(--work-accent-rgb, 38, 184, 173), .20), transparent 42%),
+        var(--work-backdrop-image, none);
+    background-position: center top, center top, center 8%;
+    background-repeat: no-repeat;
+    background-size: cover, cover, min(100vw, 1920px) auto;
+    content: "";
+    opacity: .56;
+    pointer-events: none;
+}
+
+body:is(.single-donghua, .single-movie, .single-episode) :is(.single-donghua-hero, .watch-header-block, .player-fixed-16x9) {
+    border-color: color-mix(in srgb, var(--work-accent, #26b8ad) 24%, rgba(157, 190, 205, .14));
+}
+body.single-donghua :is(.btn-single-hero-primary, .work-section-nav a:hover, .work-facts-genres a:hover),
+body.single-episode :is(.server-pill.is-active, .nav-quad-btn.next-btn, .watch-page-container .is-current-episode) {
+    --local-work-accent: var(--work-accent, #26b8ad);
+}
+body.single-donghua .btn-single-hero-primary {
+    border-color: color-mix(in srgb, var(--work-accent, #26b8ad) 66%, transparent);
+    background: linear-gradient(135deg, color-mix(in srgb, var(--work-accent, #26b8ad) 76%, #10212b), color-mix(in srgb, var(--work-accent, #26b8ad) 55%, #09151e));
+}
+body.single-donghua .work-facts-genres a,
+body.single-donghua .work-section-nav a:hover,
+body.single-donghua .work-section-nav a:focus-visible { color: color-mix(in srgb, var(--work-accent, #26b8ad) 74%, white); }
+body.single-episode .watch-page-container { --brand-primary: var(--work-accent, #26b8ad); }
+body.single-donghua .single-hero-badges-row .badge-age { direction: ltr; unicode-bidi: isolate; }
+body.single-donghua .work-section-nav { justify-content: center; }
+body.single-movie .work-section-nav { justify-content: center; }
+body.single-donghua .section-episodes .season-picker-card { flex-basis: min(300px, 84vw); min-height: 136px; grid-template-columns: 80px minmax(0, 1fr); gap: 14px; }
+body.single-donghua .section-episodes .season-picker-poster { width: 80px; height: 120px; }
+body.single-donghua .section-episodes .season-picker-card-info .season-current-badge { position: static; display: inline-flex; width: fit-content; max-width: 100%; padding: 3px 8px; border-radius: 999px; background: var(--work-accent, #26b8ad); color: #fff; font-size: 10px; line-height: 1.3; white-space: nowrap; }
+body.single-donghua .okd-rating-summary-label { color: var(--text-secondary, #b6c5cf); font-size: 11px; font-weight: 750; }
+body.single-donghua .okd-rating-average { color: #fff0c5; font-size: 18px; font-weight: 900; unicode-bidi: isolate; }
+body.single-donghua .okd-rating-out-of { unicode-bidi: isolate; }
+body.single-donghua .section-episodes .episode-resume {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 44px;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    margin: 0 0 14px;
+    border: 1px solid color-mix(in srgb, var(--work-accent, #26b8ad) 38%, rgba(157, 190, 205, .18));
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--work-accent, #26b8ad) 9%, rgba(8, 18, 27, .94));
+    box-sizing: border-box;
+}
+body.single-donghua .section-episodes .episode-resume a { color: color-mix(in srgb, var(--work-accent, #26b8ad) 52%, #eef7f8); font-weight: 800; text-decoration: none; }
+body.single-donghua .section-episodes .episode-resume a:hover { text-decoration: underline; }
+body.single-donghua .section-episodes .episode-resume small { flex: 0 0 auto; color: var(--text-secondary, #b6c5cf); white-space: nowrap; }
+
+/* Homepage: discovery links and watch-history section spacing. */
+body.home .dh-home-v3 .home-quick-nav { margin-block: 0 clamp(12px, 1.8vw, 22px); }
+body.home .dh-home-v3 .autoplay-ring-svg .ring-progress {
+    stroke: var(--site-accent-text, var(--site-accent, #26b8ad));
+    transition: stroke .35s ease, filter .35s ease, opacity .28s ease;
+}
+body.home .dh-home-v3 .autoplay-ring-svg .ring-head {
+    fill: var(--site-accent-text, var(--site-accent, #26b8ad));
+    filter: drop-shadow(0 0 4px var(--site-accent-text, var(--site-accent, #26b8ad)));
+    transition: fill .35s ease, filter .35s ease, opacity .28s ease;
+}
+body.home .dh-home-v3 #continue-watching { margin-block: 0 clamp(28px, 4vw, 48px); }
+body.home .dh-home-v3 .home-continue-empty { display: flex; min-height: 116px; align-items: center; gap: 14px; padding: clamp(14px, 2vw, 22px); border: 1px dashed var(--layout-border); border-radius: 14px; background: color-mix(in srgb, var(--layout-surface) 86%, transparent); }
+body.home .dh-home-v3 .home-continue-empty-icon { display: grid; width: 44px; height: 44px; flex: 0 0 44px; place-items: center; border: 1px solid color-mix(in srgb, var(--site-accent, #26b8ad) 34%, transparent); border-radius: 12px; background: color-mix(in srgb, var(--site-accent, #26b8ad) 10%, transparent); color: var(--site-accent-text, #72d9cd); }
+body.home .dh-home-v3 .home-continue-empty > div { min-width: 0; }
+body.home .dh-home-v3 .home-continue-empty strong { color: var(--text-primary, #e8f0f4); font-size: 15px; }
+body.home .dh-home-v3 .home-continue-empty p { margin: 4px 0 0; color: var(--text-secondary, #a7b7c2); font-size: 12px; line-height: 1.7; }
+body.home .dh-home-v3 .home-continue-empty > a { display: inline-flex; min-height: 40px; flex: 0 0 auto; align-items: center; justify-content: center; margin-inline-start: auto; padding-inline: 13px; border: 1px solid color-mix(in srgb, var(--site-accent, #26b8ad) 36%, transparent); border-radius: 9px; color: var(--site-accent-text, #72d9cd); font-size: 12px; font-weight: 800; text-decoration: none; }
+@media (max-width: 520px) {
+    body.home .dh-home-v3 .hero-slider-section {
+        display: flex;
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        flex-direction: column;
+        gap: 6px;
+        overflow: visible;
+        margin-block-end: 20px;
+    }
+    body.home .dh-home-v3 .hero-slider-section .hero-swiper {
+        height: 294px;
+        min-height: 294px;
+        flex: 0 0 294px;
+    }
+    body.home .dh-home-v3 .hero-autoplay-control-btn {
+        position: relative;
+        inset: auto;
+        align-self: flex-start;
+        margin: 0 10px;
+    }
+    body.home .dh-home-v3 .home-continue-empty { align-items: flex-start; flex-wrap: wrap; }
+    body.home .dh-home-v3 .home-continue-empty > div { flex: 1 1 calc(100% - 60px); }
+    body.home .dh-home-v3 .home-continue-empty > a { margin-inline-start: 58px; }
+}
+
+/* Shared fluid grids and spacing for the major public page families. */
+body.home .homepage-portal,
+body.post-type-archive-donghua .archive-donghua-page,
+body.search .search-results-page,
+body.page .schedule-page-container,
+body:is(.post-type-archive-encyclopedia, .tax-encyclopedia_type, .single-encyclopedia) .enc-body-container,
+body.single-donghua .single-donghua-body,
+body.single-episode .watch-inner-wrap {
+    width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-max));
+    max-width: var(--layout-content-max);
+    margin-inline: auto;
+}
+
+body:is(.single-donghua, .single-episode) .portal-section { margin-block-end: var(--layout-section-space); }
+body.single-donghua .single-donghua-hero-container { width: min(calc(100% - 2 * var(--layout-gutter)), var(--layout-content-max)); max-width: var(--layout-content-max); }
+
+@media (max-width: 1024px) {
+    :root { --layout-gutter: clamp(14px, 2.2vw, 24px); }
+    body.single-donghua .single-hero-content-wrap { gap: clamp(18px, 3vw, 36px); }
+    body.single-episode .watch-inner-wrap { width: calc(100% - 2 * var(--layout-gutter)) !important; }
+}
+
+@media (max-width: 782px) {
+    :root { --layout-section-space: 30px; }
+    .site-container, .container, .site-container-wide, .site-container-reading, .reading-container { padding-inline: var(--layout-gutter); }
+    body.single-donghua .single-hero-content-wrap { grid-template-columns: minmax(0, 1fr) clamp(76px, 18vw, 132px); }
+    body.single-donghua .single-hero-poster-col { width: clamp(76px, 18vw, 132px); }
+    body.single-donghua .single-donghua-body,
+    body.single-donghua .single-donghua-hero-container,
+    body.single-episode .watch-inner-wrap { width: calc(100% - 2 * var(--layout-gutter)) !important; }
+    body.single-episode .watch-inner-wrap { padding-top: 12px; }
+    body.single-donghua .work-section-nav { justify-content: flex-start; }
+}
+
+@media (max-width: 600px) {
+    :root { --layout-gutter: 12px; --layout-section-space: 26px; }
+    html { scroll-padding-top: 68px; }
+    body.single-donghua .single-hero-content-wrap { grid-template-columns: minmax(0, 1fr) 76px; gap: 10px; padding: 16px 12px; }
+    body.single-donghua .single-hero-poster-col { width: 76px; }
+    body.single-donghua .single-hero-title { font-size: clamp(21px, 6vw, 28px); }
+    body.single-donghua .single-hero-actions-row > *, body.single-donghua .single-hero-user-ribbon > * { min-width: 0; }
+    body.single-episode .watch-inner-wrap { width: calc(100% - 24px) !important; padding-top: 10px; }
+    body.single-episode .watch-breadcrumb-trail { font-size: 11px; }
+    body.single-episode .watch-title-meta-group h1 { max-width: 100%; font-size: clamp(20px, 5.6vw, 28px); line-height: 1.4; overflow-wrap: anywhere; }
+    body.single-episode :is(.server-selector, .watch-servers, .download-servers, .server-pills, .watch-server-list) { max-width: 100%; }
+    body.single-episode :is(.server-pill, .nav-quad-btn, .btn-hub-action) { max-width: 100%; }
+    body.single-episode .watch-resume-prompt { max-width: calc(100% - 20px); }
+}
+
+@media (max-width: 380px) {
+    :root { --layout-gutter: 10px; }
+    body.single-donghua .single-hero-content-wrap { grid-template-columns: minmax(0, 1fr) 68px; padding-inline: 10px; }
+    body.single-donghua .single-hero-poster-col { width: 68px; }
+    body.single-episode .watch-inner-wrap { width: calc(100% - 20px) !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto !important; }
+    *, *::before, *::after { scroll-behavior: auto !important; }
+}

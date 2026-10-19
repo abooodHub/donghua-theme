@@ -1,0 +1,96 @@
+/* ==========================================================================
+   Donghua Theme - Branding & Logo System
+   Standardized Proportions, High-DPI Clarity & RTL Alignment
+   ========================================================================== */
+
+.site-branding {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    margin-inline-end: clamp(16px, 2vw, 28px);
+    position: relative;
+    z-index: 2;
+}
+
+.site-branding .dh-brand-logo {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.dh-brand-logo-content { display: inline-flex; align-items: center; position: relative; }
+
+/* Header Logo Frame: 168px x 40px on Large Desktop (+5% scale) */
+.dh-brand-logo-frame {
+    position: relative;
+    width: 168px;
+    height: 40px;
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.dh-brand-logo-frame .dh-brand-logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: start center;
+    display: block;
+    pointer-events: none;
+}
+
+.dh-brand-logo-img--full { display: none !important; }
+
+.dh-brand-logo-img {
+    filter: none;
+    transition: opacity .2s ease;
+}
+
+/* Header, footer and account identity share one artwork scale and ratio. */
+.footer-logo .dh-brand-logo {
+    display: inline-flex;
+    margin-bottom: var(--space-sm);
+}
+
+.footer-logo .dh-brand-logo-frame {
+    width: 210px;
+    height: 70px;
+}
+
+.footer-logo .dh-brand-logo-img--header { display: none !important; }
+.footer-logo .dh-brand-logo-img--full { display: block !important; }
+
+/* Responsive Logo Proportions */
+@media (max-width: 1024px) {
+    .site-branding {
+        margin-inline-end: 14px;
+    }
+    .dh-brand-logo-frame {
+        width: 145px;
+        height: 34px;
+    }
+}
+
+@media (max-width: 768px) {
+    .site-branding {
+        margin-inline-end: 10px;
+    }
+    .dh-brand-logo-frame {
+        width: 132px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 390px) {
+    .site-branding {
+        margin-inline-end: 6px;
+    }
+    .dh-brand-logo-frame {
+        width: 120px;
+        height: 28px;
+    }
+}
